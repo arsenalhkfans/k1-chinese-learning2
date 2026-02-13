@@ -1,0 +1,144 @@
+:root {
+  --bg: #fff4d9;
+  --card-bg: #ffffff;
+  --text: #2f2f36;
+  --primary: #ff7b54;
+  --primary-hover: #f26b42;
+  --secondary: #4a8ee8;
+  --secondary-hover: #3a7bd1;
+  --shadow: 0 12px 26px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #fffaf0 0%, var(--bg) 75%);
+  color: var(--text);
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.page {
+  display: none;
+  width: min(1000px, 100%);
+}
+
+.page--active {
+  display: block;
+}
+
+#homePage {
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 28px;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+}
+
+.study-layout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 22px;
+  align-items: center;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 34px;
+  box-shadow: var(--shadow);
+  min-height: 430px;
+  display: grid;
+  place-content: center;
+  gap: 16px;
+  text-align: center;
+  padding: 28px;
+}
+
+.emoji {
+  margin: 0;
+  font-size: clamp(4rem, 11vw, 7rem);
+  line-height: 1.1;
+}
+
+.character {
+  margin: 0;
+  font-size: clamp(5.5rem, 14vw, 10rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.actions {
+  display: grid;
+  gap: 16px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 22px;
+  padding: 20px 28px;
+  min-width: 220px;
+  font-size: clamp(1.2rem, 2.3vw, 1.8rem);
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.12s ease, filter 0.12s ease, background-color 0.12s ease;
+}
+
+.btn:hover {
+  filter: brightness(0.98);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn--primary {
+  background-color: var(--primary);
+}
+
+.btn--primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn--secondary {
+  background-color: var(--secondary);
+}
+
+.btn--secondary:hover {
+  background-color: var(--secondary-hover);
+}
+
+.btn:focus-visible {
+  outline: 4px solid #222;
+  outline-offset: 3px;
+}
+
+@media (max-width: 860px) {
+  .study-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 360px;
+  }
+
+  .actions {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    min-width: 100%;
+  }
+}
