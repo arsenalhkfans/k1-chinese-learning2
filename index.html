@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>K1 中文字學習</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <section id="homePage" class="page active" aria-label="首頁">
+      <h1>🎈 K1 中文字學習</h1>
+      <button id="startBtn" class="btn btn-primary" type="button">開始</button>
+    </section>
+
+    <section id="studyPage" class="page" aria-label="學習頁">
+      <div class="study-wrap">
+        <article class="word-card" aria-live="polite">
+          <p id="emojiDisplay" class="emoji" role="img" aria-label="圖案"></p>
+          <p id="charDisplay" class="character" aria-label="中文字"></p>
+        </article>
+
+        <div class="controls">
+          <button id="speakBtn" class="btn btn-secondary" type="button">🔊 廣東話發音</button>
+          <button id="nextBtn" class="btn btn-primary" type="button">下一個</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

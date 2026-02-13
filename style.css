@@ -1,0 +1,137 @@
+:root {
+  --bg: #fef5e7;
+  --card: #ffffff;
+  --primary: #ff7f50;
+  --primary-hover: #ff6a34;
+  --secondary: #4a90e2;
+  --secondary-hover: #3579c9;
+  --text: #2d2a32;
+  --shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: linear-gradient(145deg, #fff8ec, var(--bg));
+  color: var(--text);
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.page {
+  display: none;
+  width: min(980px, 100%);
+}
+
+.page.active {
+  display: block;
+}
+
+#homePage {
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 24px;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+}
+
+.study-wrap {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: center;
+}
+
+.word-card {
+  background: var(--card);
+  border-radius: 32px;
+  box-shadow: var(--shadow);
+  min-height: 420px;
+  display: grid;
+  place-content: center;
+  gap: 18px;
+  padding: 32px;
+  text-align: center;
+}
+
+.emoji {
+  font-size: clamp(4rem, 10vw, 7rem);
+  margin: 0;
+}
+
+.character {
+  font-size: clamp(5rem, 14vw, 10rem);
+  margin: 0;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.controls {
+  display: grid;
+  gap: 16px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 22px;
+  padding: 20px 28px;
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+  box-shadow: var(--shadow);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:hover {
+  filter: brightness(0.97);
+}
+
+.btn-primary {
+  background: var(--primary);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+}
+
+.btn-secondary:hover {
+  background: var(--secondary-hover);
+}
+
+#startBtn {
+  min-width: 180px;
+}
+
+@media (max-width: 820px) {
+  .study-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  .word-card {
+    min-height: 360px;
+  }
+}
